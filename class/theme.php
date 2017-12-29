@@ -31,4 +31,4 @@ class theme
     }
 }
 
-$wp_theme = theme();
+$wp_theme = new theme();
