@@ -3,7 +3,7 @@ global $wp_query, $wp_theme;
 ?>
 <div class="listing">
     <?php
-    while ( $wp_query->has_posts() )
+    while ( $wp_query->have_posts() )
     {
         $wp_query->the_post();
 
