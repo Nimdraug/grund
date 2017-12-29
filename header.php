@@ -5,3 +5,6 @@
     <?php wp_head() ?>
 </head>
 <body>
+<header id="header">
+    <a href="<?=home_url()?>"><?bloginfo( 'name' )?></a>
+</header>
