@@ -6,40 +6,61 @@ class theme
     {
     }
 
-    function the_layout()
-    {
-        get_template_part( 'layout/layout' );
-    }
-
-    function the_view()
+    function the_layout( $layout = null )
     {
         global $wp_query;
 
-        if ( $wp_query->is_archive() || $wp_query->is_home() )
+        if ( ! $layout )
+            $layout = $wp_query->get( 'layout' );
+
+        get_template_part( 'layout/layout', $layout );
+    }
+
+    function the_view( $view = null )
+    {
+        global $wp_query, $post;
+
+        if ( ! $view )
+            $view = $wp_query->get( 'view' );
+
+        if ( $view == 'listing' || $wp_query->is_archive() || $wp_query->is_home() )
             $this->listing();
         else
             $this->detail();
     }
 
-    function listing()
+    function listing( $listing = null )
     {
-        get_template_part( 'listing/listing' );
+        global $wp_query, $post;
+
+        if ( ! $listing )
+            $listing = $wp_query->get( 'listing' );
+
+        get_template_part( 'listing/listing', $listing );
     }
 
-    function listed()
+    function listed( $listed = null )
     {
-        get_template_part( 'listed/listed' );
+        global $wp_query, $post;
+
+        if ( ! $listed )
+            $listed = $wp_query->get( 'listed', $post->post_type );
+
+        get_template_part( 'listed/listed', $listed );
     }
 
-    function detail()
+    function detail( $detail = null )
     {
-        global $wp_query;
+        global $wp_query, $post;
+
+        if ( ! $detail )
+            $detail = $wp_query->get( 'detail', $post->post_type );
 
         if ( $wp_query->have_posts() )
         {
             $wp_query->the_post();
 
-            get_template_part( 'detail/detail' );
+            get_template_part( 'detail/detail', $detail );
         }
     }
 }
