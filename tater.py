@@ -26,7 +26,7 @@ def main( destination = 'local' ):
         print e
         there_revision = None
 
-    there.destination( taters.debug_filter( build( ignore( here.source( here_revision, there_revision, recursive = True ) ) ) ) )
+    there.destination( build( ignore( taters.debug_filter( here.source( here_revision, there_revision, recursive = True ) ) ) ) )
 
 if __name__ == '__main__':
     main()
