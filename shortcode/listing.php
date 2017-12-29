@@ -8,9 +8,13 @@ add_shortcode( 'listing', function ( $atts, $content ) {
         'post_type' => 'post'
     ] );
 
+    ob_start();
+
     $wp_theme->listing();
 
     wp_reset_postdata();
 
     $wp_query = $old_wp_query;
+
+    return ob_get_clean();
 } );
