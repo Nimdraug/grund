@@ -8,7 +8,7 @@ class theme
 
     function the_layout()
     {
-
+        get_template_part( 'layout/layout' );
     }
 
     function the_view()
