@@ -33,7 +33,14 @@ class theme
 
     function detail()
     {
-        get_template_part( 'detail/detail' );
+        global $wp_query;
+
+        if ( $wp_query->have_posts() )
+        {
+            $wp_query->the_post();
+
+            get_template_part( 'detail/detail' );
+        }
     }
 }
 
