@@ -4,7 +4,7 @@ import re
 
 def ignore( files ):
     for f in files:
-        if re.match( '(tater\.py.?|locations\.py(.?|\.example))' ):
+        if re.match( '(tater\.py.?|locations\.py(.?|\.example))', f.name ):
             continue
 
         yield f
