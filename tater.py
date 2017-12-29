@@ -26,7 +26,7 @@ def main( destination = 'local' ):
         print e
         there_revision = None
 
-    there.destination( build( ignore( taters.debug_filter( here.source( here_revision, there_revision, recursive = True ) ) ) ) )
+    there.destination( build( ignore( taters.debug_filter( here.source( there_revision, None, recursive = True ) ) ) ), overwrite = True )
 
     version_p = taters.pipe( '.taters-version' )
     version_p.w.write( here_revision )
