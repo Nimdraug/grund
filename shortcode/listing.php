@@ -2,11 +2,13 @@
 add_shortcode( 'listing', function ( $atts, $content ) {
     global $wp_theme, $wp_query;
 
+    $atts = shortcode_atts( WP_Query::fill_query_vars( [
+        'post_type' => 'post'
+    ] ), $atts );
+
     $old_wp_query = $wp_query;
 
-    $wp_query = new WP_Query( [
-        'post_type' => 'post'
-    ] );
+    $wp_query = new WP_Query( $atts );
 
     ob_start();
 
