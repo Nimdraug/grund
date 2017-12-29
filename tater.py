@@ -28,5 +28,11 @@ def main( destination = 'local' ):
 
     there.destination( build( ignore( taters.debug_filter( here.source( here_revision, there_revision, recursive = True ) ) ) ) )
 
+    version_p = taters.pipe( '.taters-version' )
+    version_p.w.write( here_revision )
+    version_p.w.close()
+
+    there.put( version_p.r )
+
 if __name__ == '__main__':
     main()
