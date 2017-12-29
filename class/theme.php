@@ -15,7 +15,7 @@ class theme
     {
         global $wp_query;
 
-        if ( $wp_query->is_archive() )
+        if ( $wp_query->is_archive() || $wp_query->is_home() )
             $this->listing();
         else
             $this->detail();
