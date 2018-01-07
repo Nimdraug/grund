@@ -1,6 +1,6 @@
 <?php
-global $wp_theme;
+global $grund_theme;
 
 get_header();
-$wp_theme->the_view();
+$grund_theme->the_view();
 get_footer();

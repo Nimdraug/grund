@@ -1,6 +1,6 @@
 <?php
 
-class theme
+class grund_theme
 {
     function __construct()
     {
@@ -65,4 +65,4 @@ class theme
     }
 }
 
-$wp_theme = new theme();
+$grund_theme = new grund_theme();

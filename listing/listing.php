@@ -1,5 +1,5 @@
 <?php
-global $wp_query, $wp_theme;
+global $wp_query, $grund_theme;
 ?>
 <div class="listing">
     <?php
@@ -7,7 +7,7 @@ global $wp_query, $wp_theme;
     {
         $wp_query->the_post();
 
-        $wp_theme->listed();
+        $grund_theme->listed();
     }
     ?>
 </div>

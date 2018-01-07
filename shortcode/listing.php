@@ -1,6 +1,6 @@
 <?php
 add_shortcode( 'listing', function ( $atts, $content ) {
-    global $wp_theme, $wp_query;
+    global $grund_theme, $wp_query;
 
     $atts = shortcode_atts( WP_Query::fill_query_vars( [
         'post_type' => 'post'
@@ -12,7 +12,7 @@ add_shortcode( 'listing', function ( $atts, $content ) {
 
     ob_start();
 
-    $wp_theme->listing();
+    $grund_theme->listing();
 
     wp_reset_postdata();
 

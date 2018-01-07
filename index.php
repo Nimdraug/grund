@@ -1,2 +1,2 @@
 <?php
-$wp_theme->the_layout();
+$grund_theme->the_layout();
