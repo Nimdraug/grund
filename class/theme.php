@@ -63,6 +63,22 @@ class grund_theme
             get_template_part( 'detail/detail', $detail );
         }
     }
+
+    function get_the_page_title()
+    {
+        global $s;
+
+        if ( function_exists( 'is_tag' ) && is_tag() )
+            return 'Tag Archive for &quot;' . $tag . '&quot;';
+        elseif ( is_archive() )
+            return wp_title( '', false ) . ' Archive';
+        elseif ( is_search() )
+            return 'Search for &quot;' . wp_specialchars( $s ) . '&quot;';
+        elseif ( ! ( is_404() ) && ( is_single() ) || ( is_page() ) )
+            return wp_title( '', false );
+        elseif ( is_404() )
+            return '404 Not Found';
+    }
 }
 
 $grund_theme = new grund_theme();
