@@ -79,6 +79,19 @@ class grund_theme
         elseif ( is_404() )
             return '404 Not Found';
     }
+
+    /*
+    Return an html attribute if the value is set, otherwise return nothing.
+    */
+    function maybe_attr( $attr, $val, $space = true )
+    {
+        if ( $val )
+        {
+            return ( $space ? ' ' : '' ) . $attr . '="' . $val . '"';
+        }
+
+        return '';
+    }
 }
 
 $grund_theme = new grund_theme();
