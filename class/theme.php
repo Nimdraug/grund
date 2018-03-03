@@ -6,7 +6,19 @@ class grund_theme
     {
         global $wp_query;
 
+        $this->query_stack = [];
         $this->the_query = $wp_query;
+    }
+
+    function push_query()
+    {
+        $this->query_stack[] = $this->the_query;
+    }
+
+    function pop_query()
+    {
+        $this->the_query = array_pop( $this->query_stack );
+        $this->the_query->reset_postdata();
     }
 
     function the_layout( $layout = null )
