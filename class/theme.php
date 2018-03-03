@@ -4,6 +4,9 @@ class grund_theme
 {
     function __construct()
     {
+        global $wp_query;
+
+        $this->the_query = $wp_query;
     }
 
     function the_layout( $layout = null )
