@@ -6,7 +6,7 @@ add_shortcode( 'listing', function ( $atts, $content ) {
         'post_type' => 'post'
     ] ), $atts );
 
-    $old_wp_query = $wp_query;
+    $grund_theme->push_query();
 
     $wp_query = new WP_Query( $atts );
 
@@ -14,9 +14,7 @@ add_shortcode( 'listing', function ( $atts, $content ) {
 
     $grund_theme->listing();
 
-    wp_reset_postdata();
-
-    $wp_query = $old_wp_query;
+    $grund_theme->pop_query();
 
     return ob_get_clean();
 } );
