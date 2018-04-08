@@ -3,7 +3,7 @@ import re
 
 def ignore( files ):
     for f in files:
-        if re.match( '(tater\.py.?|locations\.py(.?|\.example))', f.name ):
+        if re.match( '(tato\.py.?|locations\.py(.?|\.example)|\.git.*)', f.name ):
             continue
 
         yield f
