@@ -8,6 +8,14 @@ class grund_theme
 
         $this->query_stack = [];
         $this->the_query = $wp_query;
+
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
+    }
+
+    function enqueue()
+    {
+        // Styles
+        wp_enqueue_style( 'grund-styles', get_stylesheet_uri() );
     }
 
     function push_query()
