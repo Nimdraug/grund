@@ -4,3 +4,20 @@ Author: Martin Hultén-Ashauer
 Author URI: http://nimdraug.com
 Version: 0.1-dev
 */
+
+body
+{
+    font-family: sans-serif;
+}
+
+*
+{
+    margin: 5px;
+    padding: 5px;
+    background: rgba( 0, 0, 0, 0.1 );
+}
+
+a
+{
+    color: rgba( 115, 25, 25, 0.85 );
+}
