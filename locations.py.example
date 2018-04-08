@@ -1,0 +1,18 @@
+import taters.locations
+
+# Most likely, the location this file is in is a git repo
+here = taters.locations.git( '.' )
+
+# Example local location, uncomment to use
+# local = taters.locations.local( '/srv/http/example.com' )
+
+# Example SSH locations, uncomment to use
+# Authentication should be done with keys in ~/.ssh/ (more secure)
+# staging = taters.locations.ssh( 'ssh://user@staging.example.com/src/http/example.com' )
+# live = taters.locations.ssh( 'ssh://user@example.com/src/http/example.com' )
+
+# Example FTP locations, uncomment to use
+# staging = taters.locations.ftp( 'ftp://user@staging.example.com/public_html' )
+# staging.url.password = 'xxxxx'
+# live = taters.locations.ftp( 'ftp://user@example.com/public_html' )
+# live.url.password = 'xxxxx'
