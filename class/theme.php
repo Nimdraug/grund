@@ -27,15 +27,22 @@ class grund_theme
         wp_enqueue_style( 'grund-styles', get_stylesheet_uri() );
     }
 
-    function push_query()
+    function push_query( $new_query )
     {
+        global $wp_query;
+
         $this->query_stack[] = $this->the_query;
+        $this->the_query = $wp_query = $new_query;
     }
 
     function pop_query()
     {
-        $this->the_query = array_pop( $this->query_stack );
+        global $wp_query;
+
+        $this->the_query = $wp_query = array_pop( $this->query_stack );
         $this->the_query->reset_postdata();
+
+        return $this->the_query;
     }
 
     function the_layout( $layout = null )
