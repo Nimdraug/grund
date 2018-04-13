@@ -21,3 +21,13 @@ a
 {
     color: rgba( 115, 25, 25, 0.85 );
 }
+
+.post
+{
+    background: rgba( 0, 128, 0, .1 );
+}
+
+.page
+{
+    background: rgba( 0, 0, 128, .1 );
+}
