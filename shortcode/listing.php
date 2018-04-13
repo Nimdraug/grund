@@ -7,9 +7,7 @@ add_shortcode( 'listing', function ( $atts, $content ) {
         'post_type' => 'post',
     ], WP_Query::fill_query_vars( $grund_theme->default_query_vars ) ), $atts, 'listing' );
 
-    $grund_theme->push_query();
-
-    $grund_theme->the_query = $wp_query = new WP_Query( $atts );
+    $grund_theme->push_query( new WP_Query( $atts ) );
 
     ob_start();
 
