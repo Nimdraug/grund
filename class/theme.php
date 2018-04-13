@@ -2,6 +2,15 @@
 
 class grund_theme
 {
+    var $default_query_vars = [
+        'layout' => null,
+        'view' => null,
+        'listing' => null,
+        'listed' => null,
+        'detail' => null,
+        'sidebar' => null,
+    ];
+
     function __construct()
     {
         global $wp_query;
