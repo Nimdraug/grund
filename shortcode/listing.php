@@ -2,10 +2,10 @@
 add_shortcode( 'listing', function ( $atts, $content ) {
     global $grund_theme, $wp_query;
 
-    $atts = shortcode_atts( WP_Query::fill_query_vars( [
+    // grund default query vars + wp default query vars + shortcode defaults + given shortcode atts
+    $atts = shortcode_atts( wp_parse_args( [
         'post_type' => 'post',
-        'listing' => null
-    ] ), $atts );
+    ], WP_Query::fill_query_vars( $grund_theme->default_query_vars ) ), $atts );
 
     $grund_theme->push_query();
 
